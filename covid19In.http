@@ -1,0 +1,113 @@
+
+
+
+//api.....1login..1......
+
+
+post http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
+
+####
+
+
+//api..2..
+get http://localhost:3000/states/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0
+
+
+
+###
+//api..3..
+get http://localhost:3000/states/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0
+######
+
+###
+
+//api...4.....post a district
+post http://localhost:3000/districts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0 
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+
+######
+
+//api..5...distruict based on district id
+
+get http://localhost:3000/districts/322/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0 
+
+
+######
+
+//api.....6..delete a district on id
+
+DELETE http://localhost:3000/districts/329/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0 
+
+
+####
+
+//api.....7...
+
+
+PUT http://localhost:3000/districts/329/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0 
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+
+###
+
+// api...8... Returns the statistics of a specific state based on state ID
+ 
+get http://localhost:3000/states/1/stats/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjQyOTI1MzkwfQ.C-DiUXEGTO8GkxCWKLUz9WDBSYSLYCb6ABnIIz0-sa0 
+
+
+####
+//api.....3.....
+
+put http://localhost:3000/change-password
+Content-Type: application/json
+
+{
+  "username": "adam_richard",
+  "oldPassword": "richard_567",
+  "newPassword": "richdfgsdrgedr"
+}
+
+###
+//api..1...
+
+post http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "dam_richard",
+  "name": "Adam Richard",
+  "password": "richt",
+  "gender": "male",
+  "location": "Detroit"
+}
