@@ -228,28 +228,4 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//api...3....
-
-app.put("/change-password", async (req, res) => {
-  const { username, oldPassword, newPassword } = req.body;
-  const getUserQuery = `select * from user where username="${username}"`;
-  const getUser = await db.get(getUserQuery);
-  const comparePass = await bcrypt.compare(oldPassword, getUser.password);
-
-  if (comparePass == false) {
-    res.status(400);
-    res.send("Invalid current password");
-  } else {
-    if (newPassword.length < 5) {
-      res.status(400);
-      res.send("Password is too short");
-    } else {
-      const encrPassword = await bcrypt.hash(newPassword, 10);
-      const changepass = `update user set password='${encrPassword}' where username="${username}";`;
-      await db.run(changepass);
-      res.send("Password updated");
-    }
-  }
-});
-
 module.exports = app;
