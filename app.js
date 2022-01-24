@@ -37,6 +37,10 @@ const authMiddleWare = (req, res, next) => {
   if (reqHeder != undefined) {
     jwtToken = reqHeder.split(" ")[1];
   }
+  if (reqHeder == undefined) {
+    res.status(401);
+    res.send("Invalid JWTt Token");
+  }
   if (jwtToken == undefined) {
     res.status(401);
     res.send("Invalid JWTt Token");
